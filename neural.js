@@ -26,7 +26,7 @@
     var track = root.querySelector('.v-track');
     var stops = Array.prototype.slice.call(root.querySelectorAll('.v-stop'));
     var dots = Array.prototype.slice.call(root.querySelectorAll('.v-dots button'));
-    var header = root.querySelector('.v-header');
+    var header = root.querySelector('.v-brand');   // the nav stays visible; only the brand fades in after the landing screen
     var N = stops.length;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var step = 1, tTarget = 0, tSmooth = 0;
@@ -111,6 +111,7 @@
     }
 
     layout();
+    if (location.hash === '#find-out-more') { scroller.scrollTop = (N - 1) * step + 1; tTarget = tSmooth = N - 1; }
     updateOverlay();
 
     var THREE = window.THREE, renderer = null;
