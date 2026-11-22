@@ -1,4 +1,4 @@
-/* Veridian news feed. Posts live in posts.json (newest first); every post is by the author named there.
+/* Viridian news feed. Posts live in posts.json (newest first); every post is by the author named there.
    news.html shows the list; news.html#<slug> shows one post. */
 (function () {
   'use strict';
@@ -19,10 +19,10 @@
     var p = el('p', 'v-byline'); p.append('By ', el('b', null, author)); return p;
   }
   function list(data) {
-    document.title = 'News — Veridian';
+    document.title = 'News — Viridian';
     var head = el('div', 'v-feed-head');
-    head.append(el('p', 'v-eyebrow', 'Veridian | Gen.1'), el('h1', 'v-display', 'News'),
-      el('p', 'v-lead', 'A record of the first generation of Veridian implants, by ' + data.author + '.'));
+    head.append(el('p', 'v-eyebrow', 'Viridian | Gen.1'), el('h1', 'v-display', 'News'),
+      el('p', 'v-lead', 'A record of the first generation of Viridian implants, by ' + data.author + '.'));
     var ol = el('ol', 'v-feed');
     data.posts.forEach(function (post) {
       var li = el('li', 'v-post-item');
@@ -36,10 +36,18 @@
     main.replaceChildren(head, ol);
   }
   function article(data, post) {
-    document.title = post.title + ' — Veridian';
+    document.title = post.title + ' — Viridian';
     var back = el('a', 'v-back', '← All news'); back.href = 'news.html';
     var art = el('article', 'v-article');
     art.append(el('p', 'v-eyebrow', when(post)), el('h1', 'v-display', post.title), byline(post.author || data.author));
+    if (post.image && post.image.src) {
+      var fig = el('figure', 'v-figure'), img = el('img');
+      img.src = post.image.src; img.alt = post.image.alt || '';
+      if (post.image.width) { img.width = post.image.width; img.height = post.image.height; }
+      fig.append(img);
+      if (post.image.caption) fig.append(el('figcaption', 'v-small', post.image.caption));
+      art.append(fig);
+    }
     var body = el('div', 'v-article-body');
     (post.body || []).forEach(function (line) {
       if (line.indexOf('## ') === 0) body.append(el('h2', null, line.slice(3)));
@@ -47,6 +55,11 @@
       else body.append(el('p', null, line));
     });
     art.append(body);
+    // every post ends with the same faint note that this is fiction
+    var note = el('p', 'v-disclaimer'), link = el('a', null, 'cubicfilms.com');
+    link.href = 'https://cubicfilms.com'; link.target = '_blank'; link.rel = 'noopener';
+    note.append('(This is a work of fiction, created as part of the GENERATION ONE universe, by Jim Lounsbury - ', link, ')');
+    art.append(note);
     main.replaceChildren(back, art);
   }
   function render(data) {

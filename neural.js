@@ -1,4 +1,4 @@
-/* Veridian — scroll-driven neural network scene.
+/* Viridian — scroll-driven neural network scene.
    Needs THREE (three@0.149.0 classic build) loaded first.
    Markup contract: .v-site > .v-scroller > (.v-stage > canvas.v-canvas + .v-stop × N) + .v-track */
 (function () {
@@ -295,7 +295,7 @@
       g.strokeStyle = 'rgba(0,240,255,0.9)'; g.lineWidth = 3; g.strokeRect(147.5, 147.5, 217, 217);
       g.strokeStyle = 'rgba(96,170,255,0.45)'; g.lineWidth = 1.5; g.strokeRect(157.5, 157.5, 197, 197);
       if (markImg) {
-        // the Veridian V, drawn from the supplied logo file
+        // the Viridian V, drawn from the supplied logo file
         var mw = 172, mh = mw * markImg.naturalHeight / markImg.naturalWidth;
         g.drawImage(markImg, 256 - mw / 2, 256 - mh / 2, mw, mh);
       } else {
