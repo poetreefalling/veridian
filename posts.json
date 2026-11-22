@@ -2,46 +2,50 @@
   "author": "Dr. Sandra Wilhelm",
   "posts": [
     {
-      "slug": "living-connected",
-      "label": "Gen.1 · Entry 03",
+      "slug": "one-hundred",
+      "label": "Gen.1 · Diary 01",
       "date": "",
-      "title": "Living connected: your implant and Stratos OS",
-      "summary": "What it means to be connected to superintelligence everywhere that runs Stratos OS.",
+      "title": "One hundred",
+      "summary": "A diary entry from the day Veridian completed its 100th implant in Stratos, and the twenty years of brain-computer interface research that led there.",
       "body": [
-        "People ask me what connection feels like. The honest answer is that it stops feeling like anything. You do not open it or log in to it. It is there when you reach for it, the way a word is there when you need it.",
-        "A Veridian | Gen.1 implant connects you to superintelligence everywhere that runs Stratos OS. You bring the question. The answer arrives as your own thought, in your own voice.",
-        "## What stays yours",
-        "Your memories are still yours. Your decisions are still yours. The implant widens what you can reach; it does not choose for you.",
-        "In the entries that follow I will set out how we got here, one generation at a time."
-      ]
-    },
-    {
-      "slug": "ten-thousand-in-stratos",
-      "label": "Gen.1 · Entry 02",
-      "date": "",
-      "title": "Ten thousand procedures in Stratos",
-      "summary": "Over 10,000 people have now had the procedure in Stratos, a Freedom City.",
-      "body": [
-        "Every Veridian procedure takes place in Stratos. It is a Freedom City, and it is where this work became possible.",
-        "Over 10,000 successful brain implants have now taken place there. Each one has taught us something, and each one has made the next more routine.",
-        "## Why Stratos",
-        "Stratos gave us room to do one thing carefully, many times over. That is how a procedure becomes dependable.",
-        "If you are considering joining them, the first step is a conversation. Use the form on our home page and we will be in touch."
-      ]
-    },
-    {
-      "slug": "introducing-gen-1",
-      "label": "Gen.1 · Entry 01",
-      "date": "",
-      "title": "Introducing Veridian | Gen.1",
-      "summary": "The first generation of Veridian implants: enhanced memory, immunity and biological processes.",
-      "body": [
-        "Veridian | Gen.1 is the first generation of Veridian implants. I am writing these entries so that there is a plain record of what it is and what it does.",
-        "A Gen.1 implant gives you enhanced memory, immunity and biological processes. It works with the body you already have.",
-        "## Living longer",
-        "With Veridian you can extend your lifespan by 20–30 years*. That is the figure we stand behind for this generation.",
-        "The future is you. This is where it starts.",
-        "*Results dependent on blood type and other factors."
+        "## 05:10, before first light",
+        "I have been awake since four. Twenty years in this field and I still cannot sleep before a theatre day. Today is different, though, and I knew it the moment I opened my eyes. Today we place the hundredth Veridian implant.",
+        "One hundred is not a scientific number. Nothing in the data changes between ninety-nine and one hundred. But I have spent two decades in a field that counted its human beings one at a time, and for most of those years I could have named nearly every person on Earth living with an electrode array in their cortex. So I am allowing myself the number. I am allowing myself to be excited.",
+        "I am writing this down because I want a plain record, in my own words, of how we got here. Diaries are unfashionable. I do not care.",
+        "## 06:30, the walk to the clinic",
+        "Stratos is quiet at this hour. The harbour lights are still on and the promenade is empty. I walk the long way round because I think better on my feet.",
+        "What I think about, most mornings, is a man named Matthew Nagle. In 2004 he became the first participant in the BrainGate trial to have a Utah array placed in his motor cortex: a square of silicon about four millimetres across, carrying roughly a hundred needle-like electrodes, each one listening to a few neurons. He was paralysed from the neck down. With that array, a cable fixed to a pedestal on his skull and a cart of equipment beside his chair, he moved a cursor, opened email and played Pong using nothing but intention. The results were published in Nature in 2006.",
+        "I read that paper as a student and it rearranged my life. Not because of the cursor. Because of what the cursor proved: that years after an injury, the motor cortex was still issuing clear, decodable instructions. The signal had never gone away. Only the wiring had.",
+        "Everything since has been an argument about wiring.",
+        "## 07:15, coffee, and the long middle",
+        "The clinic kitchen has the only decent coffee in the building. I drink it standing up and think about the long middle years, the ones nobody writes histories about.",
+        "In 2012 a BrainGate participant who had not been able to lift a cup in almost fifteen years used a robotic arm to bring a bottle of coffee to her lips and drink. In 2021 a Stanford team showed that a man imagining handwriting could produce text at about ninety characters a minute. In 2023 the same group decoded attempted speech at sixty-two words a minute, more than three times the previous record, and a team at UC San Francisco drove a talking avatar from signals recorded on the surface of the brain. In 2024 UC Davis reported a speech neuroprosthesis that reached around ninety-seven per cent accuracy and held it for months.",
+        "Each of those results belonged to one or two people, in a research setting, attended by a team of specialists. That was the truth of the field for most of my career. The science was extraordinary and the scale was tiny. Ordinary conversation runs at about a hundred and sixty words a minute. We spent years climbing toward it, one participant at a time.",
+        "## 08:00, pre-operative checks",
+        "Our hundredth recipient is in bay two, calm, a little amused by how nervous the rest of us are. I will not write her name here. That is hers to share.",
+        "While the team runs through the checklist I find myself thinking about the three companies that taught me how to do this.",
+        "I worked with Neuralink in the years when the question was whether a robot could do what a surgeon's hands could not. Their answer was a device the size of a coin, sealed flush with the skull, with more than a thousand electrodes spread across threads finer than a human hair, each placed by a machine built for that single task. The first person received one in January 2024. Within weeks he was playing chess with his mind, and two years later the company reported twenty-one participants in its trials. I learned there what it takes to make an implant that disappears: no pedestal, no cable, no cart beside the chair.",
+        "Synchron taught me the opposite lesson, which is that the best route into the brain may not go through the skull at all. Their Stentrode travels up through the jugular vein and opens like a stent inside a blood vessel that lies beside the motor cortex. The first people to receive it were in Australia. In the American COMMAND study it was placed in six patients, with a median deployment time of twenty minutes, and the study met its safety endpoint at twelve months. Fewer electrodes, less signal, and a procedure that interventional teams already know how to perform. I have never forgotten that trade. A device nobody can deliver helps nobody.",
+        "Paradromics taught me about bandwidth. Their Connexus device carries four hundred and twenty-one microelectrodes that record from individual neurons, built to carry enough information for speech. It was first placed in a person briefly, during epilepsy surgery at the University of Michigan in 2025, and the first long-term implant in their Connect-One study followed in 2026. Working with that team I understood that restoring a voice is a data problem before it is anything else.",
+        "There were others, and I owe them too. Blackrock Neurotech, whose arrays made so much of the early human work possible. Precision Neuroscience, laying a thin film of electrodes on the surface of the cortex without piercing it. Science Corporation, working on sight. Every one of them moved the wall a little.",
+        "## 09:40, scrubbing in",
+        "Ten minutes at the sink is the last quiet I will have today. So, the difficult subject.",
+        "Why Stratos? I am asked it constantly, usually with suspicion, and the suspicion is fair.",
+        "The idea of a freedom city did not start with us. Economists had argued for charter cities since at least 2009: new jurisdictions with their own rules, built to try what older systems could not. There was Próspera, on the island of Roatán in Honduras, which drew clinics and biotech ventures under its own regulatory code and then spent years in dispute with the Honduran government after the law that enabled it was repealed. In 2023 came a proposal in the United States to charter up to ten new freedom cities on federal land, and after it a coalition of startup-city builders who drafted legislation and lobbied for it. Supporters called it homesteading for a new century. Critics called it a way for companies to write their own rules. Both descriptions had something in them.",
+        "Stratos is a Freedom City. I will be honest about what that gave us and what it did not. It did not give us permission to be careless. A brain does not know what jurisdiction it is in. What Stratos gave us was the ability to do one procedure, the same way, many times, and to learn from each one faster than a study of six people can allow. The early feasibility studies I grew up on followed a handful of participants for years. They were right to. But a hundred people is a different kind of knowledge.",
+        "I hold both thoughts at once. The caution of the old trials was earned by real harm in the history of medicine. And a person who is losing their memory does not have a decade to wait. If Stratos is to deserve its name, the freedom has to belong to the person in bay two, not to me.",
+        "## 13:20, afterwards",
+        "It is done. Two hours and eleven minutes, start to finish. No surprises. I have learned to love that phrase more than any other in surgery.",
+        "She was awake and talking within the hour. The first thing she asked was whether she was really number one hundred, or whether we had just told her that to make her feel special. I told her the truth, which is both.",
+        "Then we ran the first link check, and I watched the trace come up clean on the monitor, and I had to leave the room for a minute.",
+        "I want to record why. For most of my career a successful implant meant a signal out: a cursor, a letter, a word. One direction. Veridian | Gen.1 closes the loop. It listens and it supports: memory, immunity, the slow biological processes that decide how a body ages. It connects to Stratos OS, so the intelligence it draws on is not sealed inside the device. Twenty years ago we were proud to move a dot across a screen. This afternoon I watched a system settle into a living brain and begin, quietly, to help it.",
+        "## 19:00, the roof",
+        "The team has gone to dinner. I said I would follow. I came up here instead.",
+        "A hundred people. When I started, the whole worldwide history of this field would have fitted in one room, and I would have known most of their names. Matthew Nagle died in 2007, a year after his paper was published, and never saw what he began. I think of him tonight. I think of every participant in every early study who went first, with a cable in their skull and no promise of anything, so that the signal could be shown to exist.",
+        "I am not naive about what comes next. One hundred will become a thousand, and a thousand will become a number I cannot picture, and scale brings its own problems. We will be asked hard questions about who this is for, and what it costs, and what it means to be connected. We should be asked them. I intend to answer in this diary, plainly, for as long as I am allowed to keep it.",
+        "But that is for tomorrow. Tonight I am simply a scientist who waited twenty years to count to one hundred.",
+        "The future is you. I have said that sentence in a great many meetings. Tonight, for the first time, I think I understand it.",
+        "S.W."
       ]
     }
   ]
