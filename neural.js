@@ -111,7 +111,11 @@
     }
 
     layout();
-    if (location.hash === '#find-out-more') { scroller.scrollTop = (N - 1) * step + 1; tTarget = tSmooth = N - 1; }
+    function fromHash() {
+      if (location.hash === '#find-out-more') { scroller.scrollTop = (N - 1) * step + 1; tTarget = tSmooth = N - 1; }
+    }
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
     updateOverlay();
 
     var THREE = window.THREE, renderer = null;
