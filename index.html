@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veridian — The Future is You</title>
+<meta name="description" content="Veridian neural implants: enhanced memory, immunity and biological processes. The Future is You.">
+<meta name="theme-color" content="#020716">
+<link rel="icon" href="assets/veridian-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&amp;family=Syncopate:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="veridian.css">
+</head>
+<body>
+<div class="v-site">
+  <div class="v-scroller" tabindex="-1">
+    <div class="v-stage">
+      <canvas class="v-canvas" aria-hidden="true"></canvas>
+
+      <header class="v-header">
+        <a class="v-brand" href="#top" data-goto="0" aria-label="Veridian, back to start">
+          <img src="assets/veridian-mark.png" alt="">
+          <img src="assets/veridian-wordmark-reversed.png" alt="Veridian">
+        </a>
+        <a class="v-btn v-btn--ghost" href="#find-out-more" data-goto="last">Find out more</a>
+      </header>
+
+      <section class="v-stop" id="top" aria-label="Veridian">
+        <div class="v-hero">
+          <img src="assets/veridian-logo-reversed.png" alt="Veridian" width="803" height="401">
+          <h1 class="v-display-xl">The Future is You</h1>
+          <button class="v-cue" type="button" data-goto="1">Scroll to enter<i aria-hidden="true"></i></button>
+        </div>
+      </section>
+
+      <section class="v-stop" aria-label="Enhancement">
+        <div class="v-prop">
+          <p class="v-eyebrow">01 · Enhancement</p>
+          <h2 class="v-display">Veridian gives you enhanced memory, immunity and biological processes.</h2>
+        </div>
+      </section>
+
+      <section class="v-stop" aria-label="Longevity">
+        <div class="v-prop">
+          <p class="v-eyebrow">02 · Longevity</p>
+          <h2 class="v-display">Live longer with Veridian. Extend your lifespan by <em>20–30&nbsp;years</em>*.</h2>
+        </div>
+        <p class="v-small v-footnote">*Results dependent on blood type and other factors.</p>
+      </section>
+
+      <section class="v-stop" aria-label="Connection">
+        <div class="v-prop">
+          <p class="v-eyebrow">03 · Connection</p>
+          <h2 class="v-display">Connect to superintelligence everywhere that runs <em>Stratos&nbsp;OS</em>.</h2>
+        </div>
+      </section>
+
+      <section class="v-stop" aria-label="The procedure">
+        <div class="v-prop">
+          <p class="v-eyebrow">04 · The procedure</p>
+          <h2 class="v-display">Join over <em>10,000&nbsp;people</em> who have had the procedure in Stratos.</h2>
+        </div>
+      </section>
+
+      <section class="v-stop" id="find-out-more" aria-label="Find out more">
+        <div class="v-final">
+          <div class="v-final-chip">
+            <p class="v-eyebrow">The Veridian implant</p>
+          </div>
+          <div class="v-panel">
+            <div class="v-form-intro">
+              <p class="v-eyebrow">05 · Your future</p>
+              <h2 class="v-display">Find out more.</h2>
+              <p class="v-lead">Tell us where to reach you and we will send everything you need to know about a Veridian implant.</p>
+            </div>
+            <form class="v-form" method="post" action="https://api.web3forms.com/submit">
+              <label class="v-field"><span>Full name</span>
+                <input class="v-input" type="text" name="name" autocomplete="name" placeholder="Your name" required>
+              </label>
+              <label class="v-field"><span>Email</span>
+                <input class="v-input" type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+              </label>
+              <!-- Web3Forms access key: paste it into value="" to switch on email delivery -->
+              <input type="hidden" name="access_key" value="">
+              <input type="hidden" name="subject" value="New Veridian enquiry">
+              <input type="hidden" name="from_name" value="Veridian website">
+              <input class="v-hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <button class="v-btn v-btn--block" type="submit">Find out more</button>
+              <p class="v-small v-form-error" role="alert" hidden>That did not send. Please try again in a moment.</p>
+              <p class="v-small">We only use your details to send information about Veridian implants.</p>
+            </form>
+            <div class="v-form-done" role="status">
+              <p class="v-eyebrow">Signal received</p>
+              <h2 class="v-display">The future is you.</h2>
+              <p class="v-lead">Thank you. We will be in touch with more about your Veridian implant.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ol class="v-dots" aria-label="Sections">
+        <li><button type="button" aria-label="Veridian"></button></li>
+        <li><button type="button" aria-label="Enhancement"></button></li>
+        <li><button type="button" aria-label="Longevity"></button></li>
+        <li><button type="button" aria-label="Connection"></button></li>
+        <li><button type="button" aria-label="The procedure"></button></li>
+        <li><button type="button" aria-label="Find out more"></button></li>
+      </ol>
+    </div>
+    <div class="v-track" aria-hidden="true"></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+<script src="neural.js"></script>
+</body>
+</html>

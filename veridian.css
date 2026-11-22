@@ -1,0 +1,262 @@
+/* Veridian — tokens (mirrors the design system's tokens.json) */
+:root {
+  --void: #020716; --navy: #061a40; --panel: rgba(4, 14, 40, 0.84); --royal: #0a5fe6; --cyan: #00f0ff;
+  --ice: #bfeaff; --ink: #f2fbff; --muted: #9db4d6; --on-cyan: #021226; --spark: #ffa040; --danger: #ff9a9a;
+  --hairline: rgba(159, 232, 255, 0.24); --hairline-strong: rgba(159, 232, 255, 0.6);
+  --glow-cyan: 0 0 24px rgba(0, 240, 255, 0.35); --glow-strong: 0 0 36px rgba(0, 240, 255, 0.6);
+  --glow-panel: 0 0 80px rgba(10, 95, 230, 0.28), inset 0 1px 0 rgba(191, 234, 255, 0.14);
+  --space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 24px; --space-5: 40px; --space-6: 64px;
+  --radius-sm: 4px; --radius-md: 10px; --radius-lg: 20px; --radius-pill: 999px;
+  --font-display: Syncopate, "Arial Black", sans-serif; --font-sans: Outfit, "Helvetica Neue", Arial, sans-serif;
+}
+html, body { margin: 0; height: 100%; background: var(--void); overflow: hidden; }
+
+/* Veridian components. Every value comes from tokens.json custom properties. */
+
+.v-root, .v-site {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+.v-root *, .v-site * { box-sizing: border-box; }
+
+/* ---------- type ---------- */
+.v-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin: 0;
+}
+.v-display-xl {
+  font-weight: 200;
+  font-size: clamp(40px, 7.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+.v-display {
+  font-weight: 300;
+  font-size: clamp(30px, 4.6vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+.v-display em { font-style: normal; color: var(--cyan); }
+.v-lead {
+  font-weight: 300;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.5;
+  color: var(--ice);
+  margin: 0;
+  text-wrap: pretty;
+}
+.v-small { font-size: 13px; line-height: 20px; color: var(--muted); margin: 0; }
+
+/* ---------- proposition: one claim, held in the middle of the network ---------- */
+.v-prop {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: center;
+  text-align: center;
+  max-width: 880px;
+  padding: var(--space-5) var(--space-4);
+  /* a soft pool of void behind the words keeps them readable over bright cells */
+  background: radial-gradient(closest-side, rgba(2, 7, 22, 0.78), rgba(2, 7, 22, 0.5) 60%, rgba(2, 7, 22, 0));
+  text-shadow: 0 2px 24px rgba(2, 7, 22, 0.9);
+}
+
+/* a qualifying line for a starred claim, pinned to the bottom of that stop */
+.v-footnote {
+  position: absolute; left: 0; right: 0; bottom: var(--space-4);
+  padding: 0 var(--space-5); text-align: center;
+  text-shadow: 0 0 12px var(--void), 0 0 4px var(--void);
+}
+
+/* ---------- button ---------- */
+.v-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--cyan);
+  border-radius: var(--radius-pill);
+  background: var(--cyan);
+  color: var(--on-cyan);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--glow-cyan);
+  transition: box-shadow 0.25s ease, background-color 0.25s ease, transform 0.15s ease;
+}
+.v-btn:hover { background: var(--ink); border-color: var(--ink); box-shadow: var(--glow-strong); }
+.v-btn:active { transform: translateY(1px); }
+.v-btn:focus-visible, .v-input:focus-visible, .v-dots button:focus-visible, .v-cue:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.v-btn--ghost {
+  background: rgba(2, 7, 22, 0.35);
+  color: var(--ink);
+  border-color: var(--hairline-strong);
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.v-btn--ghost:hover { background: rgba(0, 240, 255, 0.12); border-color: var(--cyan); color: var(--ink); box-shadow: var(--glow-cyan); }
+.v-btn--block { width: 100%; }
+.v-btn[disabled] { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+
+/* ---------- field ---------- */
+.v-field { display: grid; gap: var(--space-2); }
+.v-field > span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ice);
+}
+.v-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-md);
+  background: rgba(2, 7, 22, 0.55);
+  color: var(--ink);
+  font: 400 16px/24px var(--font-sans);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.v-input::placeholder { color: var(--muted); opacity: 1; }
+.v-input:hover { border-color: var(--ice); }
+.v-input:focus { border-color: var(--cyan); box-shadow: var(--glow-cyan); }
+.v-input:user-invalid { border-color: var(--danger); }
+
+/* ---------- panel + sign-up form ---------- */
+.v-panel {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-5);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  box-shadow: var(--glow-panel);
+}
+.v-panel .v-display { font-size: clamp(30px, 3.4vw, 44px); margin-top: var(--space-3); }
+.v-panel .v-lead { font-size: 17px; margin-top: var(--space-3); }
+.v-form { display: grid; gap: var(--space-3); margin-top: var(--space-4); }
+.v-form .v-btn { margin-top: var(--space-2); }
+.v-hp { display: none; }
+.v-form-error { color: var(--danger); }
+.v-form-done { display: none; margin-top: var(--space-4); outline: none; }
+.v-form-done .v-display { margin-top: 0; }
+.v-panel.is-done .v-form, .v-panel.is-done .v-form-intro { display: none; }
+.v-panel.is-done .v-form-done { display: grid; gap: var(--space-3); }
+
+/* ---------- the site: a sticky stage inside one scroller ---------- */
+.v-site { position: relative; height: 100vh; height: 100dvh; background: var(--void); overflow: hidden; }
+.v-scroller { height: 100%; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: none; }
+.v-scroller::-webkit-scrollbar { display: none; }
+.v-stage { position: sticky; top: 0; height: 100%; overflow: hidden; }
+.v-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.v-nogl .v-stage {
+  background:
+    radial-gradient(60% 50% at 70% 40%, rgba(10, 95, 230, 0.35), rgba(2, 7, 22, 0)),
+    radial-gradient(40% 40% at 25% 65%, rgba(0, 240, 255, 0.18), rgba(2, 7, 22, 0)),
+    var(--void);
+}
+.v-stage::after { /* vignette */
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 50%, rgba(2, 7, 22, 0) 55%, rgba(2, 7, 22, 0.7) 100%);
+}
+.v-stop {
+  position: absolute; inset: 0; z-index: 2;
+  display: grid; place-items: center;
+  padding: 88px var(--space-4) var(--space-6);
+  will-change: opacity, transform;
+}
+.v-stop[inert] { pointer-events: none; }
+
+.v-hero {
+  display: grid; gap: var(--space-5); justify-items: center; text-align: center;
+  padding: 96px clamp(24px, 9vw, 140px);
+  /* a dark pool under the logo and tagline, inside a faint cyan halo; the whole stop fades as the scroll begins */
+  background:
+    radial-gradient(closest-side, rgba(2, 7, 22, 0.82), rgba(2, 7, 22, 0.5) 50%, rgba(2, 7, 22, 0) 76%),
+    radial-gradient(closest-side, rgba(0, 240, 255, 0.24), rgba(0, 240, 255, 0.1) 58%, rgba(0, 240, 255, 0));
+}
+.v-hero img { width: min(282px, 46vw); height: auto; display: block; }
+.v-hero .v-display-xl { font-size: clamp(32px, 5.9vw, 77px); text-shadow: 0 2px 30px rgba(2, 7, 22, 0.9); }
+.v-cue {
+  display: inline-grid; justify-items: center; gap: var(--space-3);
+  background: none; border: 0; padding: var(--space-2); cursor: pointer;
+  color: var(--ice); font-family: var(--font-display); font-weight: 700; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  border-radius: var(--radius-sm);
+}
+.v-cue i { display: block; width: 1px; height: 44px; background: linear-gradient(var(--cyan), rgba(0, 240, 255, 0)); animation: v-cue 2.2s ease-in-out infinite; transform-origin: top; }
+@keyframes v-cue { 0%, 100% { transform: scaleY(0.35); opacity: 0.5; } 50% { transform: scaleY(1); opacity: 1; } }
+
+.v-header {
+  position: absolute; z-index: 3; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  opacity: 0;
+}
+.v-brand { display: flex; align-items: center; gap: var(--space-3); }
+.v-brand img:first-child { height: 30px; width: auto; }
+.v-brand img:last-child { height: 11px; width: auto; }
+.v-header .v-btn { min-height: 40px; padding: 0 var(--space-3); }
+
+.v-dots {
+  position: absolute; z-index: 3; right: var(--space-3); top: 50%; transform: translateY(-50%);
+  display: grid; gap: var(--space-1); margin: 0; padding: 0; list-style: none;
+}
+.v-dots button {
+  width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; border-radius: var(--radius-pill);
+}
+.v-dots button::before {
+  content: ""; width: 6px; height: 6px; border-radius: var(--radius-pill);
+  background: var(--muted); transition: all 0.3s ease;
+}
+.v-dots button:hover::before { background: var(--ink); }
+.v-dots button[aria-current]::before { width: 8px; height: 8px; background: var(--cyan); box-shadow: var(--glow-strong); }
+
+/* last stop: the chip lives in the scene on the left, the form sits beside it */
+.v-final {
+  width: 100%; max-width: 1180px; height: 100%;
+  display: grid; grid-template-columns: 1fr minmax(320px, 440px); align-items: center; gap: var(--space-5);
+}
+.v-final-chip { text-shadow: 0 0 16px var(--void), 0 0 4px var(--void); align-self: end; justify-self: center; text-align: center; padding-bottom: var(--space-5); display: grid; gap: var(--space-2); }
+
+@media (max-width: 760px) {
+  .v-stop { padding: 72px var(--space-3) var(--space-4); }
+  .v-prop { padding: var(--space-4) var(--space-2); }
+  .v-dots { right: 2px; }
+  .v-header .v-btn { display: none; }
+}
+/* phones and portrait windows: chip above, form below (matches the camera's narrow framing in neural.js) */
+@media (max-width: 760px), (max-aspect-ratio: 19/20) {
+  .v-final { grid-template-columns: 1fr; grid-template-rows: 1fr auto; gap: var(--space-3); justify-items: center; }
+  .v-final-chip { align-self: start; padding: 0; }
+  .v-panel { max-width: 560px; padding: var(--space-4); }
+  .v-panel .v-lead { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-cue i { animation: none; }
+  .v-btn, .v-input, .v-dots button::before { transition: none; }
+}
