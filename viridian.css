@@ -200,7 +200,7 @@ html, body { margin: 0; height: 100%; background: var(--void); overflow: hidden;
     radial-gradient(closest-side, rgba(2, 7, 22, 0.82), rgba(2, 7, 22, 0.5) 50%, rgba(2, 7, 22, 0) 76%),
     radial-gradient(closest-side, rgba(0, 240, 255, 0.24), rgba(0, 240, 255, 0.1) 58%, rgba(0, 240, 255, 0));
 }
-.v-hero img { width: min(282px, 46vw); height: auto; display: block; }
+.v-hero img { width: min(169px, 28vw); height: auto; display: block; }
 .v-hero .v-display-xl { font-size: clamp(32px, 5.9vw, 77px); text-shadow: 0 2px 30px rgba(2, 7, 22, 0.9); }
 .v-cue {
   display: inline-grid; justify-items: center; gap: var(--space-3);
