@@ -46,7 +46,14 @@
         "But that is for tomorrow. Tonight I am simply a scientist who waited twenty years to count to one hundred.",
         "The future is you. I have said that sentence in a great many meetings. Tonight, for the first time, I think I understand it.",
         "S.W."
-      ]
+      ],
+      "image": {
+        "src": "assets/news/one-hundred.jpg",
+        "width": 800,
+        "height": 600,
+        "alt": "A surgical navigation screen showing brain scans in an operating theatre, with theatre staff out of focus in the foreground.",
+        "caption": "The navigation display in theatre, moments before the hundredth implant."
+      }
     }
   ]
 }

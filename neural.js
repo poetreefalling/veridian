@@ -28,7 +28,8 @@
     var dots = Array.prototype.slice.call(root.querySelectorAll('.v-dots button'));
     var header = root.querySelector('.v-brand');   // the nav stays visible; only the brand fades in after the landing screen
     var N = stops.length;
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var RENDER = window.VIRIDIAN_RENDER || null;   // set by video/render.html to drive the camera frame by frame
+    var reduce = !RENDER && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var step = 1, tTarget = 0, tSmooth = 0;
 
     function layout() {
@@ -312,6 +313,7 @@
       img.onload = function () {
         var g = faceCanvas.getContext('2d');
         g.clearRect(0, 0, 512, 512); drawFace(g, img); faceTex.needsUpdate = true;
+        window.__viridianMark = true;
       };
       img.src = src.currentSrc || src.src;
     })();
@@ -490,7 +492,7 @@
     var narrow = false;
     function resize() {
       var w = stage.clientWidth || 1, hgt = stage.clientHeight || 1;
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+      renderer.setPixelRatio(RENDER ? (window.devicePixelRatio || 1) : Math.min(window.devicePixelRatio || 1, 1.75));
       renderer.setSize(w, hgt, false);
       camera.aspect = w / hgt; camera.updateProjectionMatrix();
       narrow = w / hgt < 0.95 || w <= 760;
@@ -510,13 +512,14 @@
 
     /* ---------- frame loop ---------- */
     var clock = new THREE.Clock(), time = 0, look = new V3();
-    function frame() {
-      requestAnimationFrame(frame);
-      var dt = Math.min(clock.getDelta(), 0.05); time += dt;
-      tSmooth += (tTarget - tSmooth) * Math.min(1, dt * (reduce ? 20 : 4.2));
+    function tick(dt) {
+      time += dt;
+      if (RENDER) tSmooth = RENDER.t;
+      else tSmooth += (tTarget - tSmooth) * Math.min(1, dt * (reduce ? 20 : 4.2));
       var t = Math.max(0, Math.min(N - 1, tSmooth));
       var i = Math.floor(t), f = t - i;
-      var z = -(i + smoother((f - 0.16) / 0.68)) * SPACING;
+      // the site pauses at each stop; a rendered film travels continuously
+      var z = RENDER ? -tSmooth * SPACING : -(i + smoother((f - 0.16) / 0.68)) * SPACING;
 
       var settle = smooth(N - 1.6, N - 1, t);              // 1 when parked at the chip
       var sway = reduce ? 0 : 1 - settle;
@@ -526,8 +529,10 @@
       var cy = Math.cos(t * 1.4) * 6 * sway + Math.cos(time * 0.17) * 1.6 * drift - mouse.sy * 3.5;
       // on narrow screens the form sits low, so lift the view to put the chip up top
       var shiftX = narrow ? chipPos.x * settle : 0, shiftY = narrow ? -22 * settle : 0;
+      if (RENDER) { shiftX = chipPos.x * settle; shiftY = (chipPos.y + 16) * settle; }   // film: arrive centred, slightly above the chip
       camera.position.set(cx + shiftX, cy + shiftY, z + 8);
       look.set(cx * 0.4 + shiftX, cy * 0.4 + shiftY * 0.2 + (narrow ? -6 * settle : 0), z - 120);
+      if (RENDER) look.lerp(chipPos, settle);
       camera.lookAt(look);
       camera.rotation.z += Math.sin(t * 1.1) * 0.06 * sway;
 
@@ -569,7 +574,12 @@
       updateOverlay();
       renderer.render(scene, camera);
     }
-    frame();
+    function frame() {
+      requestAnimationFrame(frame);
+      tick(Math.min(clock.getDelta(), 0.05));
+    }
+    if (RENDER) window.__viridian = { step: tick, stops: N, resize: resize };
+    else frame();
     root.classList.add('v-ready');
   }
 
